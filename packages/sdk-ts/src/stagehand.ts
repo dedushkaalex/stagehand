@@ -1,3 +1,4 @@
+import { runDecisionAct, type DecisionActOptions } from "./decisionAct.js";
 import { RPCClient } from "./rpcClient.js";
 import { RPCResponseTimeoutError } from "./rpcErrors.js";
 import {
@@ -241,6 +242,17 @@ export class Stagehand {
 
     this.isInitialized = true;
     this.closePromise = undefined;
+  }
+
+  /** Select a local AX candidate using a typed decision provider. Never calls the LLM. */
+  async decisionAct(
+    instruction: string,
+    options: DecisionActOptions & { page?: import("./page.js").Page },
+  ) {
+    const { page, ...decisionOptions } = options;
+    const targetPage = page ?? (await this.browser.context.activePage());
+    if (!targetPage) throw new Error("Stagehand has no active page.");
+    return runDecisionAct(targetPage, instruction, decisionOptions);
   }
 
   async act(instruction: string, options?: StagehandClientActOptions): Promise<ActResult>;

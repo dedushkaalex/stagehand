@@ -148,3 +148,24 @@ export {
 } from "./clientSchemas.js";
 
 export { getExtensionArchive } from "./extensionAssets.js";
+
+export {
+  createJevDecisionProvider,
+  JevDecisionError,
+  type DecisionProvider,
+  type DecisionCandidate,
+  type DecisionInput,
+  type DecisionResult,
+  type JevDecisionProviderOptions,
+  type JevDecisionErrorCode,
+} from "./decisionProvider.js";
+export {
+  runDecisionAct,
+  collectDecisionCandidates,
+  type DecisionActOptions,
+  type DecisionActResult,
+  type DecisionActReason,
+  type DecisionAction,
+  type DecisionActCandidate,
+  type DecisionCandidateCollection,
+} from "./decisionAct.js";
