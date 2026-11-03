@@ -519,3 +519,7 @@ Licensed under the MIT License.
 Copyright 2026 Browserbase, Inc.
 
 "Stagehand" is a trademark of Browserbase, Inc.
+
+## Jev decision-provider experiment (fork branch)
+
+Русская карта проекта, цели, ограничения, план и задачи для новой GPT/OMP-сессии: [Spec Kit handoff](docs/spec-kit.ru.md). Это экспериментальная ветка fork; живое сравнение моделей ещё не выполнено.

@@ -62,3 +62,9 @@ packages/examples/cookbooks/*/*/out/
 
 # Screenshots saved by facade run code (default artifact root)
 stagehand-artifacts/
+
+# OMP: publish only reviewed Spec Kit command templates, never local state.
+.omp/*
+!.omp/commands/
+.omp/commands/*
+!.omp/commands/speckit.*.md
